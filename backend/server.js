@@ -72,6 +72,6 @@ todoRoutes.route('/add').post(function(req,res){
 app.use('/todos', todoRoutes)
 
 //server listening to port 4000
-app.listen(PORT, function(){
+app.listen(process.env.PORT || PORT, function(){
     console.log('Server is running in port:' + PORT)
 });

@@ -6,7 +6,7 @@ const mongoose  = require('mongoose');
 const todoRoutes = express.Router()
 const dotenv = require('dotenv')
 dotenv.config()
-
+const port = process.env.PORT || 4000
 let Todo = require('./todo.model')
 //attatching middleware
 app.use(cors());
@@ -71,6 +71,6 @@ todoRoutes.route('/add').post(function(req,res){
 app.use('/todos', todoRoutes)
 
 //server listening to port 4000
-app.listen(process.env.PORT, function(){
-    console.log('Server is running in port:' + process.env.PORT)
+app.listen(port, function(){
+    console.log('Server is running in port:' + port)
 });
